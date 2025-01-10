@@ -31,7 +31,7 @@ export function OverviewSection({ className, ...props }: OverviewSectionProps) {
             </div>
           <div>
             <p className="text-sm font-medium mb-2">Coverage Period Progress</p>
-            <Progress value={33} className="h-2" />
+            <Progress value={33} className="h-2 bg-[#000]" />
             <p className="text-xs text-muted-foreground mt-1">33% completed</p>
           </div>
         </div>

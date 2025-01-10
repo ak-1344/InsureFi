@@ -13,7 +13,7 @@ import {
 
 export function DashboardNav() {
   return (
-    <nav className="flex flex-col bg-gray-900 text-white w-64 h-screen">
+    <nav className="flex flex-col bg-[#121212] text-white w-64 h-screen">
       <div className="p-4">
         <Link href="/" className="flex items-center space-x-2">
           <Shield className="h-6 w-6" />

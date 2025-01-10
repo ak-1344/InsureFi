@@ -1,5 +1,7 @@
 "use client"
 import { useState } from "react"
+import {WalletSelector} from "@aptos-labs/wallet-adapter-ant-design"
+import "@aptos-labs/wallet-adapter-ant-design/dist/index.css"
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card"
 import { Button } from "./ui/button"
 import { Wallet } from 'lucide-react'
@@ -9,7 +11,6 @@ interface WalletSectionProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 export function WalletSection({ className, ...props }: WalletSectionProps) {
   const [isConnected, setIsConnected] = useState(false)
-
   const handleConnect = () => {
     // Implement wallet connection logic here
     setIsConnected(true)
@@ -29,9 +30,7 @@ export function WalletSection({ className, ...props }: WalletSectionProps) {
             <p className="text-2xl font-bold">2.5 ETH</p>
           </div>
         ) : (
-          <Button onClick={handleConnect} className="w-full">
-            <Wallet className="mr-2 h-4 w-4" /> Connect Wallet
-          </Button>
+          <WalletSelector/>
         )}
       </CardContent>
     </Card>
