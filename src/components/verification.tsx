@@ -3,7 +3,7 @@ import { Shield, Lock, Database } from "lucide-react"
 
 export function VerificationSection() {
   return (
-    <section className="py-16 bg-slate-50">
+    <section id="verification" className="py-16 bg-slate-50">
       <div className="w-full px-4 md:px-6">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Verification & Security</h2>

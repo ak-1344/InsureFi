@@ -4,10 +4,19 @@ import { InteractiveGridPattern } from '@/components/ui/interactive-grid-pattern
 import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
 import { Network } from 'lucide-react'
+import Image from 'next/image'
+import LogoTagline from '@/public/logo_tagline.svg';
+import LogoInsurefi from '@/public/logo_icon';
 
 export default function HeroSection() {
+    const scrollToPlans = () => {
+        const plansSection = document.querySelector('#plans')
+        if (plansSection) {
+            plansSection.scrollIntoView({ behavior: 'smooth' })
+        }
+    }
     return (
-        <section className="relative min-h-[90vh] w-full flex items-center overflow-hidden">
+        <section className="relative min-h-[90vh] bg-[#202020] w-full flex items-center overflow-hidden pt-16">
             {/* Background Pattern */}
             <InteractiveGridPattern
                 className={cn(
@@ -18,7 +27,11 @@ export default function HeroSection() {
             <div className="w-full px-4 md:px-6">
                 <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
                     <div className="flex flex-col justify-center space-y-8">
-                        <div className="space-y-6">
+                        <div className="space-y-0">
+                            {/* SVG Logos */}
+                            <div className="flex justify-start space-x-4">
+                                <Image width={300} src={LogoTagline} alt="logo of company with tagline"/>
+                            </div>
                             <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
                                 Reinventing Life Insurance with{" "}
                                 <span className="text-[#000]">Blockchain Security</span>
@@ -28,10 +41,15 @@ export default function HeroSection() {
                             </p>
                         </div>
                         <div className="z-20 flex flex-col gap-4 min-[400px]:flex-row">
-                            <Button size="lg" className="font-medium">
+                            <Button size="lg" className="font-medium" onClick={() => {
+                                const ctaSection = document.querySelector('#cta')
+                                if (ctaSection) {
+                                    ctaSection.scrollIntoView({ behavior: 'smooth' })
+                                }
+                            }}>
                                 Get Started
                             </Button>
-                            <Button size="lg" variant="outline" className="font-medium">
+                            <Button size="lg" variant="outline" className="font-medium" onClick={scrollToPlans}>
                                 Explore Plans
                             </Button>
                         </div>
