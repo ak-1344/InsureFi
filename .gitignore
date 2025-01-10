@@ -40,4 +40,4 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-/pdf_verfication_env
+/pdf_verfication_env*
