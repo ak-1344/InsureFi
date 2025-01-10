@@ -5,7 +5,7 @@ import { Blocks, Shield, Zap } from "lucide-react"
 export function AboutSection() {
   return (
     <section className="py-16">
-      <div className="container px-4 md:px-6">
+      <div className="w-full px-4 md:px-6">
         <div className="grid gap-12 md:grid-cols-2">
           <div className="space-y-6">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">About InsureFi</h2>
