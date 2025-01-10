@@ -1,7 +1,8 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
+import { FindUser } from '@/app/auth/api/route'
 
 type LoginFormData = {
   email: string
@@ -9,6 +10,24 @@ type LoginFormData = {
 }
 
 export default function LoginForm() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  async function Login(){
+    try{
+      const res = await FindUser(email,password);
+      if(!res){
+        console.log("User not found");
+        return;
+      }
+      if(res.email===email && res.password===password){
+        
+      }
+    }
+    catch(err){
+      console.log(err);
+    }
+  }
   const {
     register,
     handleSubmit,
@@ -17,7 +36,7 @@ export default function LoginForm() {
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
 
   const onSubmit = (data: LoginFormData) => {
-    // Simulate API call
+    Login();
     setTimeout(() => {
       console.log(data)
       setSubmitStatus('success')
@@ -42,6 +61,7 @@ export default function LoginForm() {
           id="email"
           className="mt-1 block w-full rounded-md border-gray-600 bg-gray-700 shadow-sm focus:border-[#ffd60a] focus:ring focus:ring-[#ffd60a] focus:ring-opacity-50 text-white p-2"
           placeholder="john@example.com"
+          onChange={(e) => setEmail(e.target.value)}
         />
         {errors.email && <p className="mt-1 text-xs text-red-500">{errors.email.message}</p>}
       </div>
@@ -56,6 +76,7 @@ export default function LoginForm() {
           id="password"
           className="mt-1 block w-full rounded-md border-gray-600 bg-gray-700 shadow-sm focus:border-[#ffd60a] focus:ring focus:ring-[#ffd60a] focus:ring-opacity-50 text-white p-2"
           placeholder="••••••••"
+          onChange={(e) => setPassword(e.target.value)}
         />
         {errors.password && (
           <p className="mt-1 text-xs text-red-500">{errors.password.message}</p>

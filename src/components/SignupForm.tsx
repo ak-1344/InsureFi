@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
+import { verifyUser , saveUser } from '@/app/auth/api/route'
 
 type SignupFormData = {
   firstName: string
@@ -13,6 +14,31 @@ type SignupFormData = {
 }
 
 export default function SignupForm() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [middleName, setMiddleName] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  async function SignUp(){
+    try{
+      const res = await verifyUser(email);
+      if(res){
+         console.log("User already exists");
+         return;
+      }
+      else{
+        const userexists = await saveUser(email,password,lastName,middleName,phoneNumber,firstName);
+        if(userexists){
+          console.log("User saved successfully");
+        }
+      }
+    }
+    catch(err){
+      console.log(err);
+    }
+  }
+
   const {
     register,
     handleSubmit,
@@ -21,7 +47,7 @@ export default function SignupForm() {
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
 
   const onSubmit = (data: SignupFormData) => {
-    // Simulate API call
+    SignUp();
     setTimeout(() => {
       console.log(data)
       setSubmitStatus('success')
@@ -41,6 +67,7 @@ export default function SignupForm() {
             id="firstName"
             className="mt-1 block w-full rounded-md border-gray-600 bg-gray-700 shadow-sm focus:border-[#ffd60a] focus:ring focus:ring-[#ffd60a] focus:ring-opacity-50 text-white p-2"
             placeholder="John"
+            onChange={(e) => setFirstName(e.target.value)}
           />
           {errors.firstName && (
             <p className="mt-1 text-xs text-red-500">{errors.firstName.message}</p>
@@ -56,6 +83,7 @@ export default function SignupForm() {
             id="lastName"
             className="mt-1 block w-full rounded-md border-gray-600 bg-gray-700 shadow-sm focus:border-[#ffd60a] focus:ring focus:ring-[#ffd60a] focus:ring-opacity-50 text-white p-2"
             placeholder="Doe"
+            onChange={(e) => setLastName(e.target.value)}
           />
           {errors.lastName && (
             <p className="mt-1 text-xs text-red-500">{errors.lastName.message}</p>
@@ -73,6 +101,7 @@ export default function SignupForm() {
           id="middleName"
           className="mt-1 block w-full rounded-md border-gray-600 bg-gray-700 shadow-sm focus:border-[#ffd60a] focus:ring focus:ring-[#ffd60a] focus:ring-opacity-50 text-white p-2"
           placeholder="Michael"
+          onChange={(e) => setMiddleName(e.target.value)}
         />
       </div>
 
@@ -93,6 +122,7 @@ export default function SignupForm() {
             id="phoneNumber"
             className="mt-1 block w-full rounded-md border-gray-600 bg-gray-700 shadow-sm focus:border-[#ffd60a] focus:ring focus:ring-[#ffd60a] focus:ring-opacity-50 text-white p-2"
             placeholder="+1234567890"
+            onChange={(e) => setPhoneNumber(e.target.value)}
           />
           {errors.phoneNumber && (
             <p className="mt-1 text-xs text-red-500">{errors.phoneNumber.message}</p>
@@ -114,6 +144,7 @@ export default function SignupForm() {
             id="email"
             className="mt-1 block w-full rounded-md border-gray-600 bg-gray-700 shadow-sm focus:border-[#ffd60a] focus:ring focus:ring-[#ffd60a] focus:ring-opacity-50 text-white p-2"
             placeholder="john@example.com"
+            onChange={(e) => setEmail(e.target.value)}
           />
           {errors.email && <p className="mt-1 text-xs text-red-500">{errors.email.message}</p>}
         </div>
@@ -135,6 +166,7 @@ export default function SignupForm() {
           id="password"
           className="mt-1 block w-full rounded-md border-gray-600 bg-gray-700 shadow-sm focus:border-[#ffd60a] focus:ring focus:ring-[#ffd60a] focus:ring-opacity-50 text-white p-2"
           placeholder="••••••••"
+          onChange={(e) => setPassword(e.target.value)}
         />
         {errors.password && (
           <p className="mt-1 text-xs text-red-500">{errors.password.message}</p>

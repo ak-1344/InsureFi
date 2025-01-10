@@ -5,9 +5,15 @@ import SignupForm from '@/components/SignupForm'
 import LoginForm from '@/components/LoginForm'
 import { WarpBackground } from '@/components/WarpBackground'
 import { motion } from 'framer-motion'
+import { verifyUser , saveUser , FindUser } from '@/app/auth/api/route'
+import { error } from 'console'
 
 export default function Home() {
   const [isLogin, setIsLogin] = useState(true)
+  const [email , setEmail] = useState("");
+  const [password , setPassword] = useState("");
+  const [validated,setValidated] = useState(false);
+
 
   return (
     <WarpBackground className="min-h-screen flex items-center justify-center p-4 bg-gray-900" gridColor="rgba(255, 255, 255, 0.05)">
@@ -19,7 +25,7 @@ export default function Home() {
                 className={`flex-1 py-2 text-center ${
                   isLogin ? 'bg-[#ffd60a] text-gray-900' : 'bg-gray-700 text-gray-300'
                 } rounded-l-md transition-all duration-300`}
-                onClick={() => setIsLogin(true)}
+                onClick={() => {setIsLogin(true); }}
               >
                 Login
               </button>
