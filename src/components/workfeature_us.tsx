@@ -80,7 +80,7 @@ const Icons = {
 
 const Step = ({ icon, title, description, isLast }: { icon: React.ReactNode, title: string, description: string, isLast: boolean }) => (
     <div className="flex flex-col items-center">
-        <Card className="w-full max-w-sm h-full rounded-lg shadow-lg border-2">
+        <Card className="w-full text-[#000] max-w-sm h-full rounded-lg shadow-lg border-2">
             <CardHeader>
                 <CardTitle className="flex items-center justify-center">{icon}</CardTitle>
             </CardHeader>
@@ -94,9 +94,9 @@ const Step = ({ icon, title, description, isLast }: { icon: React.ReactNode, tit
 
 export default function HowItWorks() {
     return (
-        <section className="py-16 bg-background">
+        <section className="py-16 bg-gradient-to-r from-[#0a0928] to-[#121212]">
             <div className="w-full mx-auto px-4">
-                <h2 className="text-3xl font-bold text-center mb-12">How InsureFi Works</h2>
+                <h2 className="text-3xl font-bold text-white text-center mb-12">How InsureFi Works</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {steps.map((step, index) => (
                         <Step key={index} {...step} isLast={index === steps.length - 1} />

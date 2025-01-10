@@ -4,11 +4,11 @@ import { Blocks, Shield, Zap } from "lucide-react"
 
 export function AboutSection() {
   return (
-    <section id="about" className="py-16">
+    <section id="about" className="py-16 bg-gradient-to-r text-white from-[#0a0928] to-[#121212]">
       <div className="w-full px-4 md:px-6">
         <div className="grid gap-12 md:grid-cols-2">
           <div className="space-y-6">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">About InsureFi</h2>
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">About <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#01bdc1] to-[#1d73bd]">InsureFi</span></h2>
             <p className="text-neutral-500 md:text-lg dark:text-neutral-400">
               InsureFi is revolutionizing life insurance through blockchain technology and artificial intelligence. Our
               mission is to make insurance accessible, transparent, and hassle-free for everyone.
@@ -32,7 +32,7 @@ export function AboutSection() {
                   Instant settlements
                 </li>
               </ul>
-              <Button className="mt-6">Learn More</Button>
+              <Button className="mt-6 bg-gradient-to-r from-[#01bdc1] to-[#1d73bd]">Learn More</Button>
             </div>
           </div>
           <Card className="rounded-lg shadow-lg border-2">

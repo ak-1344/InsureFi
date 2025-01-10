@@ -1,8 +1,9 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useContext } from 'react'
 import { useForm } from 'react-hook-form'
 import { FindUser } from '@/app/auth/api/route'
+import { UserContext } from '@/contexts/UserContext'
 
 type LoginFormData = {
   email: string
@@ -12,6 +13,7 @@ type LoginFormData = {
 export default function LoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const  setUser  = useContext(UserContext);
 
   async function Login(){
     try{
@@ -21,7 +23,7 @@ export default function LoginForm() {
         return;
       }
       if(res.email===email && res.password===password){
-        
+          setUser?.setUser(res);
       }
     }
     catch(err){

@@ -22,11 +22,11 @@ const faqs = [
 
 export function FAQSection() {
   return (
-    <section id="faq" className="py-16">
+    <section id="faq" className="py-16 bg-gradient-to-r from-[#0a0928] to-[#121212] text-white">
       <div className="w-full px-4 md:px-6">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Frequently Asked Questions</h2>
-          <p className="mt-4 text-neutral-500 md:text-lg dark:text-neutral-400">
+          <p className="mt-4 text-[#ffffffad] md:text-lg dark:text-neutral-400">
             Find answers to common questions about InsureFi
           </p>
         </div>

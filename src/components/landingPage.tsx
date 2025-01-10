@@ -6,7 +6,6 @@ import { motion } from "framer-motion"
 import { Network } from 'lucide-react'
 import Image from 'next/image'
 import LogoTagline from '@/public/logo_tagline.svg';
-import LogoInsurefi from '@/public/logo_icon';
 
 export default function HeroSection() {
     const scrollToPlans = () => {
@@ -16,7 +15,7 @@ export default function HeroSection() {
         }
     }
     return (
-        <section className="relative min-h-[90vh] bg-[#202020] w-full flex items-center overflow-hidden pt-16">
+        <section className="relative min-h-[90vh] bg-gradient-to-r from-[#0a0928] to-[#121212] w-full flex items-center overflow-hidden pt-16">
             {/* Background Pattern */}
             <InteractiveGridPattern
                 className={cn(
@@ -27,21 +26,21 @@ export default function HeroSection() {
             <div className="w-full px-4 md:px-6">
                 <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
                     <div className="flex flex-col justify-center space-y-8">
-                        <div className="space-y-0">
+                        <div className="space-y-2">
                             {/* SVG Logos */}
                             <div className="flex justify-start space-x-4">
                                 <Image width={300} src={LogoTagline} alt="logo of company with tagline"/>
                             </div>
-                            <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
+                            <h1 className="text-3xl font-bold tracking-tighter text-white sm:text-5xl xl:text-6xl/none">
                                 Reinventing Life Insurance with{" "}
-                                <span className="text-[#000]">Blockchain Security</span>
+                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#01bdc1] to-[#1d73bd]">Blockchain Security</span>
                             </h1>
-                            <p className="max-w-[600px] text-muted-foreground md:text-xl">
+                            <p className="z-40 max-w-[600px] text-white text-muted-foreground md:text-xl">
                                 Experience the future of life insurance. Secure, transparent, and instant settlements powered by blockchain technology.
                             </p>
                         </div>
                         <div className="z-20 flex flex-col gap-4 min-[400px]:flex-row">
-                            <Button size="lg" className="font-medium" onClick={() => {
+                            <Button size="lg" className="font-medium bg-gradient-to-r from-[#01bdc1] to-[#1d73bd]" onClick={() => {
                                 const ctaSection = document.querySelector('#cta')
                                 if (ctaSection) {
                                     ctaSection.scrollIntoView({ behavior: 'smooth' })
@@ -60,12 +59,12 @@ export default function HeroSection() {
                         <div className="relative w-full max-w-[400px] aspect-square">
                             {/* Center Node */}
                             <motion.div
-                                className="absolute left-[55%] top-[44%] -translate-x-1/2 -translate-y-1/2"
+                                className="absolute left-[60%] top-[43%] -translate-x-1/2 -translate-y-1/2"
                                 initial={{ scale: 0.8, opacity: 0 }}
                                 animate={{ scale: 1, opacity: 1 }}
                                 transition={{ duration: 0.5 }}
                             >
-                                <Network className="w-16 h-16 text-[#000]" />
+                                <Network className="w-16 h-16 text-white" />
                             </motion.div>
 
                             {/* Orbiting Nodes */}
@@ -89,7 +88,7 @@ export default function HeroSection() {
                                     }}
                                 >
                                     <motion.div
-                                        className="w-full h-full rounded-full bg-[#000]"
+                                        className="w-full h-full rounded-full bg-[#01bdc1]"
                                         animate={{
                                             scale: [1, 1.2, 1],
                                         }}
@@ -101,7 +100,7 @@ export default function HeroSection() {
                                     />
                                     {/* Connecting Lines */}
                                     <motion.div
-                                        className="absolute top-1/2 left-1/2 h-[1px] bg-[#000]/30 origin-left"
+                                        className="absolute top-1/2 left-1/2 h-[1px] bg-gradient-to-r from-[#01bdc1] to-[#1d73bd] origin-left"
                                         style={{
                                             width: '120px',
                                             transform: `rotate(${i * 45}deg)`,

@@ -4,7 +4,7 @@ import { Label } from "@/components/ui/label"
 
 export function CTASection() {
   return (
-    <section id="cta" className="py-16 bg-neutral-900 text-neutral-50 dark:bg-neutral-50 dark:text-neutral-900">
+    <section id="cta" className="py-16 bg-gradient-to-r from-[#0a0928] to-[#121212] text-white">
       <div className="w-full px-4 md:px-6">
         <div className="grid gap-8 md:grid-cols-2 items-center">
           <div>

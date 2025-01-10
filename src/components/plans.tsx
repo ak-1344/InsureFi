@@ -29,20 +29,20 @@ const plans = [
 
 export function PlansSection() {
   return (
-    <section id="plans" className="py-16 w-full">
+    <section id="plans" className="py-16 bg-gradient-to-r from-[#0a0928] to-[#121212] w-full">
       <div className=" w-full px-4 md:px-6">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Choose Your Plan</h2>
-          <p className="mt-4 text-muted-foreground md:text-lg">
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-white">Choose Your Plan</h2>
+          <p className="mt-4 text-muted-foreground md:text-lg text-[#ffffffad]">
             Find the perfect coverage tailored to your age and needs
           </p>
         </div>
         <div className="flex justify-around w-full gap-6 md:grid-cols-3 md:py-8">
           {plans.map((plan) => {
             const cardContent = (
-              <Card className="relative ">
+              <Card className="relative h-full">
                 {plan.recommended && (
-                  <Badge className="absolute top-4 right-4">
+                  <Badge className="absolute bg-gradient-to-r from-[#01bdc1] to-[#1d73bd] top-4 right-4">
                     Recommended
                   </Badge>
                 )}
@@ -77,7 +77,7 @@ export function PlansSection() {
                   </ul>
                 </CardContent>
                 <CardFooter>
-                  <Button className="w-full">Compare Plans</Button>
+                  <Button className="w-full bg-gradient-to-r from-[#01bdc1] to-[#1d73bd]">Compare Plans</Button>
                 </CardFooter>
               </Card>
             );
@@ -86,15 +86,15 @@ export function PlansSection() {
               <ShineBorder
                 key={plan.ageGroup}
                 borderRadius={8}
-                borderWidth={2}
+                borderWidth={3}
                 duration={14}
-                color={["#FFD700", "#FF8C00", "#FF4500"]}
+                color={["#01bdc1", "#1d73bd"]}
                 className="border-primary md:scale-110 md:shadow-xl"
               >
                 {cardContent}
               </ShineBorder>
             ) : (
-              <div className="shadow border rounded-xl w-56 min-w-56" key={plan.ageGroup}>{cardContent}</div>
+              <div className="shadow border rounded-xl w-[18rem] min-w-56" key={plan.ageGroup}>{cardContent}</div>
             );
           })}
         </div>

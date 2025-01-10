@@ -1,3 +1,4 @@
+"use server"
 import User from "@/model/User";
 import { connect } from "mongoose";
 
@@ -19,9 +20,10 @@ async function dbConnect() {
     }
 }
 
-dbConnect();
 
 export const FindUser = async (email: string, password: string) => {
+    await dbConnect();
+
     try{
         const doc = await User.findOne({email: email, password: password});
         return doc;
@@ -32,6 +34,8 @@ export const FindUser = async (email: string, password: string) => {
 }
 
 export const saveUser = async (email: string, password: string , lastName: string , middleName: string , phoneNumber: string , firstName: string) => {
+    await dbConnect();
+
     try{
         const user = new User({
             email: email,
@@ -50,6 +54,8 @@ export const saveUser = async (email: string, password: string , lastName: strin
 }
 
 export const verifyUser = async (email: string) => {
+    await dbConnect();
+
     try{
         const doc = await User.findOne({email: email})
         .catch((err) => {

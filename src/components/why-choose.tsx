@@ -3,11 +3,11 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 
 export function WhyChooseSection() {
   return (
-    <section id="why-choose" className="py-16 bg-slate-50">
+    <section id="why-choose" className="py-16 bg-gradient-to-r from-[#0a0928] to-[#121212]">
       <div className="w-full px-4 md:px-6">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Why Choose InsureFi?</h2>
-          <p className="mt-4 text-neutral-500 md:text-lg dark:text-neutral-400">
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-white">Why Choose <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#01bdc1] to-[#1d73bd]">InsureFi?</span></h2>
+          <p className="mt-4 text-white md:text-lg dark:text-neutral-400">
             Experience the future of insurance with our cutting-edge technology
           </p>
         </div>

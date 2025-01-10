@@ -3,6 +3,8 @@
 import * as React from "react"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
+import LogoIcon from '@/public/logo_insurefi.svg';
+import Image from "next/image";
 
 const navItems = [
     { label: "Why Choose Us", href: "#why-choose" },
@@ -38,22 +40,19 @@ export function Navbar() {
         )}>
             <div className="w-full flex h-16 items-center justify-between px-4 md:px-6">
                 <div className="flex items-center space-x-2">
-                    <span className="text-xl font-bold">InsureFi</span>
+                    <Image width={100} src={LogoIcon} alt="logo of company with tagline"/>
                 </div>
                 <nav className="hidden md:flex items-center space-x-6">
                     {navItems.map((item) => (
                         <Button
                             key={item.href}
                             variant="ghost"
-                            className="text-sm font-medium transition-colors"
+                            className="text-sm font-medium text-white transition-colors"
                             onClick={() => scrollToSection(item.href)}
                         >
                             {item.label}
                         </Button>
                     ))}
-                    <Button onClick={() => scrollToSection('#cta')}>
-                        Get Started
-                    </Button>
                 </nav>
                 <Button
                     className="md:hidden"

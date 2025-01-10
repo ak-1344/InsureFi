@@ -1,4 +1,4 @@
-import { Schema , model } from 'mongoose';
+import { Schema, model, models } from 'mongoose';
 
 interface IUser {
     email: string;
@@ -10,29 +10,30 @@ interface IUser {
 }
 
 const UserSchema = new Schema<IUser>({
-    email:{
+    email: {
         type: String,
         unique: true,
         required: true
     },
-    password:{
+    password: {
         type: String,
         required: true
     },
-    firstName:{
+    firstName: {
         type: String
     },
-    middleName:{
+    middleName: {
         type: String
     },
-    lastName:{
+    lastName: {
         type: String
     },
-    phoneNumber:{
+    phoneNumber: {
         type: String
     }
-})
+});
 
-const UserMain = model<IUser>('UserMain', UserSchema);
+// Check if the model already exists before defining it
+const User = models?.User || model<IUser>('User', UserSchema);
 
-export default UserMain;
+export default User;

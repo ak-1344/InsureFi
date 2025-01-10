@@ -24,11 +24,11 @@ const testimonials = [
 
 export function TestimonialsSection() {
   return (
-    <section id="testimonials" className="py-16 bg-slate-50">
+    <section id="testimonials" className="py-16 text-white bg-gradient-to-r from-[#0a0928] to-[#121212]">
       <div className="w-full px-4 md:px-6">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">What Our Users Say</h2>
-          <p className="mt-4 text-neutral-500 md:text-lg dark:text-neutral-400">
+          <p className="mt-4 text-[#ffffffad] md:text-lg dark:text-neutral-400">
             Real stories from real users who trust InsureFi
           </p>
         </div>
@@ -38,7 +38,7 @@ export function TestimonialsSection() {
               <CardHeader>
                 <div className="flex gap-1">
                   {Array.from({ length: testimonial.rating }).map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-primary text-neutral-900 dark:text-neutral-50" />
+                    <Star key={i} className="w-5 h-5 fill-[#01bdc1] text-[#01bdc1] dark:text-neutral-50" />
                   ))}
                 </div>
               </CardHeader>
