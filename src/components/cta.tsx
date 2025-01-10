@@ -5,7 +5,7 @@ import { Label } from "@/components/ui/label"
 export function CTASection() {
   return (
     <section className="py-16 bg-neutral-900 text-neutral-50 dark:bg-neutral-50 dark:text-neutral-900">
-      <div className="container px-4 md:px-6">
+      <div className="w-full px-4 md:px-6">
         <div className="grid gap-8 md:grid-cols-2 items-center">
           <div>
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">

@@ -35,7 +35,7 @@ export function AboutSection() {
               <Button className="mt-6">Learn More</Button>
             </div>
           </div>
-          <Card>
+          <Card className="rounded-lg shadow-lg border-2">
             <CardContent className="p-6">
               <img
                 src="/placeholder.svg?height=400&width=500"

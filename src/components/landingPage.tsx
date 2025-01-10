@@ -7,7 +7,7 @@ import { Network } from 'lucide-react'
 
 export default function HeroSection() {
     return (
-        <section className="relative min-h-[90vh] w-full flex items-center border-b">
+        <section className="relative min-h-[90vh] w-full flex items-center overflow-hidden">
             {/* Background Pattern */}
             <InteractiveGridPattern
                 className={cn(

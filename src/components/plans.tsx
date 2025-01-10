@@ -30,17 +30,17 @@ const plans = [
 export function PlansSection() {
   return (
     <section className="py-16 w-full">
-      <div className="w-full px-4 md:px-6">
+      <div className=" w-full px-4 md:px-6">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Choose Your Plan</h2>
           <p className="mt-4 text-muted-foreground md:text-lg">
             Find the perfect coverage tailored to your age and needs
           </p>
         </div>
-        <div className="grid w-full gap-6 md:grid-cols-3 md:py-8">
+        <div className="flex justify-around w-full gap-6 md:grid-cols-3 md:py-8">
           {plans.map((plan) => {
             const cardContent = (
-              <Card className="relative">
+              <Card className="relative ">
                 {plan.recommended && (
                   <Badge className="absolute top-4 right-4">
                     Recommended
@@ -94,7 +94,7 @@ export function PlansSection() {
                 {cardContent}
               </ShineBorder>
             ) : (
-              <div className="shadow border rounded-xl" key={plan.ageGroup}>{cardContent}</div>
+              <div className="shadow border rounded-xl w-56 min-w-56" key={plan.ageGroup}>{cardContent}</div>
             );
           })}
         </div>
