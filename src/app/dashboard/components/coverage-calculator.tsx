@@ -29,9 +29,9 @@ export function CoverageCalculator() {
   }
 
   return (
-    <div className="grid gap-4">
-      <div className="grid gap-2">
-        <Label htmlFor="age">Age</Label>
+    <div className="grid p-4 gap-4 rounded-lg text-2xl bg-[#fff]">
+      <div className="grid gap-2 ">
+        <Label className="text-2xl" htmlFor="age">Age</Label>
         <Input
           id="age"
           type="number"
@@ -41,7 +41,7 @@ export function CoverageCalculator() {
         />
       </div>
       <div className="grid gap-2">
-        <Label htmlFor="coverage">Coverage Amount ($)</Label>
+        <Label className="text-2xl" htmlFor="coverage">Coverage Amount ($)</Label>
         <Input
           id="coverage"
           type="number"
@@ -50,7 +50,7 @@ export function CoverageCalculator() {
           placeholder="Enter desired coverage amount"
         />
       </div>
-      <Button onClick={calculatePremium}>Calculate Premium</Button>
+      <Button className="bg-gradient-to-r from-[#01bdc1] to-[#1d73bd]" onClick={calculatePremium}>Calculate Premium</Button>
       {monthlyPremium !== null && (
         <div className="text-center">
           <p className="text-lg font-semibold">Estimated Monthly Premium</p>

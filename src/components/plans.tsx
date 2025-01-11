@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import ShineBorder from "@/components/ui/shine-border";
+import HyperText from "./ui/hyper-text";
 
 const plans = [
   {
@@ -49,8 +50,7 @@ export function PlansSection() {
                 <CardHeader>
                   <CardTitle className="text-2xl">Age {plan.ageGroup}</CardTitle>
                   <div className="mt-4">
-                    <span className="text-4xl font-bold">{plan.price}</span>
-                    <span className="text-muted-foreground">/month</span>
+                    <HyperText startOnView={true} as={'span'} characterSet={["0", "1", "2",'3','4','5','6','7','8','9']} className="text-4xl font-bold">{plan.price}</HyperText>/month
                   </div>
                 </CardHeader>
                 <CardContent>

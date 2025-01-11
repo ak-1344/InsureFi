@@ -6,7 +6,6 @@ import { motion } from "framer-motion"
 import { Network } from 'lucide-react'
 import Image from 'next/image'
 import LogoTagline from '@/public/logo_tagline.svg';
-
 export default function HeroSection() {
     const scrollToPlans = () => {
         const plansSection = document.querySelector('#plans')

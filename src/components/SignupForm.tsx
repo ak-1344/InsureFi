@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
-import { verifyUser , saveUser } from '@/app/auth/api/route'
+import { verifyUser, saveUser } from '@/app/auth/api/route'
 
 type SignupFormData = {
   firstName: string
@@ -11,6 +11,8 @@ type SignupFormData = {
   phoneNumber: string
   email: string
   password: string
+  nomineeName: string
+  aadharNumber: string
 }
 
 export default function SignupForm() {
@@ -20,21 +22,22 @@ export default function SignupForm() {
   const [middleName, setMiddleName] = useState("");
   const [firstName, setFirstName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
-  async function SignUp(){
-    try{
+  const [nomineeName, setNomineeName] = useState("");
+  const [aadharNumber, setAadharNumber] = useState("");
+
+  async function SignUp() {
+    try {
       const res = await verifyUser(email);
-      if(res){
-         console.log("User already exists");
-         return;
-      }
-      else{
-        const userexists = await saveUser(email,password,lastName,middleName,phoneNumber,firstName);
-        if(userexists){
+      if (res) {
+        console.log("User already exists");
+        return;
+      } else {
+        const userexists = await saveUser(email, password, lastName, middleName, phoneNumber, firstName);
+        if (userexists) {
           console.log("User saved successfully");
         }
       }
-    }
-    catch(err){
+    } catch (err) {
       console.log(err);
     }
   }
@@ -46,12 +49,13 @@ export default function SignupForm() {
   } = useForm<SignupFormData>()
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
 
-  const onSubmit = (data: SignupFormData) => {
-    SignUp();
+  const onSubmit = async (data: SignupFormData) => {
+    // await SignUp();
+    setSubmitStatus('success');
     setTimeout(() => {
-      console.log(data)
-      setSubmitStatus('success')
-    }, 1000)
+      console.log(data);
+      window.location.href = 'http://localhost:3001';
+    }, 3000); // Wait for 3 seconds before redirecting
   }
 
   return (
@@ -173,7 +177,48 @@ export default function SignupForm() {
         )}
       </div>
 
+      <div>
+        <label htmlFor="nomineeName" className="block text-sm font-medium text-gray-300">
+          Nominee Name
+        </label>
+        <input
+          {...register('nomineeName', { required: 'Nominee name is required' })}
+          type="text"
+          id="nomineeName"
+          className="mt-1 block w-full rounded-md border-gray-600 bg-gray-700 shadow-sm focus:border-[#01bdc1] focus:ring focus:ring-[#01bdc1] focus:ring-opacity-50 text-white p-2"
+          placeholder="Nominee Name"
+          onChange={(e) => setNomineeName(e.target.value)}
+        />
+        {errors.nomineeName && (
+          <p className="mt-1 text-xs text-red-500">{errors.nomineeName.message}</p>
+        )}
+      </div>
+
+      <div>
+        <label htmlFor="aadharNumber" className="block text-sm font-medium text-gray-300">
+          Aadhar Number
+        </label>
+        <input
+          {...register('aadharNumber', {
+            required: 'Aadhar number is required',
+            pattern: {
+              value: /^\d{12}$/,
+              message: 'Aadhar number must be 12 digits',
+            },
+          })}
+          type="text"
+          id="aadharNumber"
+          className="mt-1 block w-full rounded-md border-gray-600 bg-gray-700 shadow-sm focus:border-[#01bdc1] focus:ring focus:ring-[#01bdc1] focus:ring-opacity-50 text-white p-2"
+          placeholder="123456789012"
+          onChange={(e) => setAadharNumber(e.target.value)}
+        />
+        {errors.aadharNumber && (
+          <p className="mt-1 text-xs text-red-500">{errors.aadharNumber.message}</p>
+        )}
+      </div>
+
       <button
+
         type="submit"
         className="w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-gradient-to-r from-[#01bdc1] to-[#1d73bd] hover:bg-[#01bdc1]/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#01bdc1]"
       >

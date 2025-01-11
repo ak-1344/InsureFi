@@ -1,5 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Shield, Lock, Database } from "lucide-react"
+import Image from "next/image"
+import Verification from '@/public/verification.jpg';
 
 export function VerificationSection() {
   return (
@@ -11,7 +13,7 @@ export function VerificationSection() {
             State-of-the-art security powered by blockchain and ML
           </p>
         </div>
-        <div className="grid gap-8 md:grid-cols-2">
+        <div className="flex items-center justify-between gap-8 md:grid-cols-3">
           <div className="space-y-4">
             <h3 className="text-2xl font-bold">Advanced Document Verification</h3>
             <p className="text-[#ffffff79] dark:text-[#fff]">
@@ -38,13 +40,12 @@ export function VerificationSection() {
             </CardHeader>
             <CardContent>
               <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-primary/5 rounded-lg" />
-                <img
-                  src="/placeholder.svg?height=300&width=400"
+                <div className="absolute inset-0 rounded-lg" />
+                <Image
+                  src={Verification}
                   alt="Security Process Diagram"
                   className="rounded-lg"
-                  width={400}
-                  height={300}
+                  width={750}
                 />
               </div>
             </CardContent>
