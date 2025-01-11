@@ -20,15 +20,15 @@ export function AboutSection() {
               </p>
               <ul className="space-y-2">
                 <li className="flex items-center gap-2">
-                  <Blocks className="w-5 h-5 text-neutral-900 dark:text-neutral-50" />
+                  <Blocks className="w-5 h-5 text-[#01bdc1] dark:text-neutral-50" />
                   Immutable policy records
                 </li>
                 <li className="flex items-center gap-2">
-                  <Shield className="w-5 h-5 text-neutral-900 dark:text-neutral-50" />
+                  <Shield className="w-5 h-5 text-[#01bdc1] dark:text-neutral-50" />
                   Transparent claims process
                 </li>
                 <li className="flex items-center gap-2">
-                  <Zap className="w-5 h-5 text-neutral-900 dark:text-neutral-50" />
+                  <Zap className="w-5 h-5 text-[#01bdc1] dark:text-neutral-50" />
                   Instant settlements
                 </li>
               </ul>

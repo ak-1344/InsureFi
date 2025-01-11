@@ -14,11 +14,11 @@ interface WarpBackgroundProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 const predefinedBeams = [
-  { x: 10, delay: 0.5, hue: 45, lightness: 50, ar: 2 },
-  { x: 20, delay: 1.0, hue: 50, lightness: 55, ar: 3 },
-  { x: 30, delay: 1.5, hue: 55, lightness: 60, ar: 4 },
-  { x: 40, delay: 2.0, hue: 60, lightness: 65, ar: 5 },
-  { x: 50, delay: 2.5, hue: 65, lightness: 70, ar: 6 },
+  { x: 10, delay: 0.5, hue: 180, lightness: 50, ar: 2 },
+  { x: 20, delay: 1.0, hue: 180, lightness: 55, ar: 3 },
+  { x: 30, delay: 1.5, hue: 180, lightness: 60, ar: 4 },
+  { x: 40, delay: 2.0, hue: 180, lightness: 65, ar: 5 },
+  { x: 50, delay: 2.5, hue: 180, lightness: 70, ar: 6 },
 ];
 
 const Beam = ({

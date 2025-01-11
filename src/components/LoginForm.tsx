@@ -61,7 +61,7 @@ export default function LoginForm() {
           })}
           type="email"
           id="email"
-          className="mt-1 block w-full rounded-md border-gray-600 bg-gray-700 shadow-sm focus:border-[#ffd60a] focus:ring focus:ring-[#ffd60a] focus:ring-opacity-50 text-white p-2"
+          className="mt-1 block w-full rounded-md border-gray-600 bg-gray-700 shadow-sm focus:border-[#01bdc1] focus:ring focus:ring-[#01bdc1] focus:ring-opacity-50 text-white p-2"
           placeholder="john@example.com"
           onChange={(e) => setEmail(e.target.value)}
         />
@@ -76,7 +76,7 @@ export default function LoginForm() {
           {...register('password', { required: 'Password is required' })}
           type="password"
           id="password"
-          className="mt-1 block w-full rounded-md border-gray-600 bg-gray-700 shadow-sm focus:border-[#ffd60a] focus:ring focus:ring-[#ffd60a] focus:ring-opacity-50 text-white p-2"
+          className="mt-1 block w-full rounded-md border-gray-600 bg-gray-700 shadow-sm focus:border-[#01bdc1] focus:ring focus:ring-[#01bdc1] focus:ring-opacity-50 text-white p-2"
           placeholder="••••••••"
           onChange={(e) => setPassword(e.target.value)}
         />
@@ -87,7 +87,7 @@ export default function LoginForm() {
 
       <button
         type="submit"
-        className="w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-gray-900 bg-[#ffd60a] hover:bg-[#ffd60a]/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#ffd60a]"
+        className="w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-gradient-to-r from-[#01bdc1] to-[#1d73bd] hover:bg-[#01bdc1]/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#01bdc1]"
       >
         Log In
       </button>

@@ -65,7 +65,7 @@ export default function SignupForm() {
             {...register('firstName', { required: 'First name is required' })}
             type="text"
             id="firstName"
-            className="mt-1 block w-full rounded-md border-gray-600 bg-gray-700 shadow-sm focus:border-[#ffd60a] focus:ring focus:ring-[#ffd60a] focus:ring-opacity-50 text-white p-2"
+            className="mt-1 block w-full rounded-md border-gray-600 bg-gray-700 shadow-sm focus:border-[#01bdc1] focus:ring focus:ring-[#01bdc1] focus:ring-opacity-50 text-white p-2"
             placeholder="John"
             onChange={(e) => setFirstName(e.target.value)}
           />
@@ -81,7 +81,7 @@ export default function SignupForm() {
             {...register('lastName', { required: 'Last name is required' })}
             type="text"
             id="lastName"
-            className="mt-1 block w-full rounded-md border-gray-600 bg-gray-700 shadow-sm focus:border-[#ffd60a] focus:ring focus:ring-[#ffd60a] focus:ring-opacity-50 text-white p-2"
+            className="mt-1 block w-full rounded-md border-gray-600 bg-gray-700 shadow-sm focus:border-[#01bdc1] focus:ring focus:ring-[#01bdc1] focus:ring-opacity-50 text-white p-2"
             placeholder="Doe"
             onChange={(e) => setLastName(e.target.value)}
           />
@@ -99,7 +99,7 @@ export default function SignupForm() {
           {...register('middleName')}
           type="text"
           id="middleName"
-          className="mt-1 block w-full rounded-md border-gray-600 bg-gray-700 shadow-sm focus:border-[#ffd60a] focus:ring focus:ring-[#ffd60a] focus:ring-opacity-50 text-white p-2"
+          className="mt-1 block w-full rounded-md border-gray-600 bg-gray-700 shadow-sm focus:border-[#01bdc1] focus:ring focus:ring-[#01bdc1] focus:ring-opacity-50 text-white p-2"
           placeholder="Michael"
           onChange={(e) => setMiddleName(e.target.value)}
         />
@@ -120,7 +120,7 @@ export default function SignupForm() {
             })}
             type="tel"
             id="phoneNumber"
-            className="mt-1 block w-full rounded-md border-gray-600 bg-gray-700 shadow-sm focus:border-[#ffd60a] focus:ring focus:ring-[#ffd60a] focus:ring-opacity-50 text-white p-2"
+            className="mt-1 block w-full rounded-md border-gray-600 bg-gray-700 shadow-sm focus:border-[#01bdc1] focus:ring focus:ring-[#01bdc1] focus:ring-opacity-50 text-white p-2"
             placeholder="+1234567890"
             onChange={(e) => setPhoneNumber(e.target.value)}
           />
@@ -142,7 +142,7 @@ export default function SignupForm() {
             })}
             type="email"
             id="email"
-            className="mt-1 block w-full rounded-md border-gray-600 bg-gray-700 shadow-sm focus:border-[#ffd60a] focus:ring focus:ring-[#ffd60a] focus:ring-opacity-50 text-white p-2"
+            className="mt-1 block w-full rounded-md border-gray-600 bg-gray-700 shadow-sm focus:border-[#01bdc1] focus:ring focus:ring-[#01bdc1] focus:ring-opacity-50 text-white p-2"
             placeholder="john@example.com"
             onChange={(e) => setEmail(e.target.value)}
           />
@@ -164,7 +164,7 @@ export default function SignupForm() {
           })}
           type="password"
           id="password"
-          className="mt-1 block w-full rounded-md border-gray-600 bg-gray-700 shadow-sm focus:border-[#ffd60a] focus:ring focus:ring-[#ffd60a] focus:ring-opacity-50 text-white p-2"
+          className="mt-1 block w-full rounded-md border-gray-600 bg-gray-700 shadow-sm focus:border-[#01bdc1] focus:ring focus:ring-[#01bdc1] focus:ring-opacity-50 text-white p-2"
           placeholder="••••••••"
           onChange={(e) => setPassword(e.target.value)}
         />
@@ -175,7 +175,7 @@ export default function SignupForm() {
 
       <button
         type="submit"
-        className="w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-gray-900 bg-[#ffd60a] hover:bg-[#ffd60a]/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#ffd60a]"
+        className="w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-gradient-to-r from-[#01bdc1] to-[#1d73bd] hover:bg-[#01bdc1]/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#01bdc1]"
       >
         Sign Up
       </button>

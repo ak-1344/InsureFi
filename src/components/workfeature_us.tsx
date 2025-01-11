@@ -21,7 +21,7 @@ const steps = [
     },
     {
         icon: <Zap className="w-12 h-12 text-primary" />,
-        title: "4. Instant Claim Settlements",
+        title: "4. Quick Claim Settlements",
         description: "Upon approval, receive instant settlement of your claim, thanks to our automated smart contract process."
     }
 ]

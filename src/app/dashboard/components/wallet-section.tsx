@@ -12,7 +12,7 @@ interface WalletSectionProps extends React.HTMLAttributes<HTMLDivElement> {}
 export function WalletSection({ className, ...props }: WalletSectionProps) {
   const [isConnected, setIsConnected] = useState(false)
   const handleConnect = () => {
-    // Implement wallet connection logic here
+    
     setIsConnected(true)
   }
 

@@ -16,14 +16,14 @@ export default function Home() {
 
 
   return (
-    <WarpBackground className="min-h-screen flex items-center justify-center p-4 bg-gray-900" gridColor="rgba(255, 255, 255, 0.05)">
+    <WarpBackground className="min-h-screen flex items-center justify-center p-4 bg-gradient-to-r from-[#0a0928] to-[#121212]" gridColor="rgba(255, 255, 255, 0.05)">
       <div className="w-full max-w-2xl">
         <div className="bg-gray-800 shadow-xl rounded-lg overflow-hidden">
           <div className="p-6 w-96">
             <div className="flex mb-6">
               <button
                 className={`flex-1 py-2 text-center ${
-                  isLogin ? 'bg-[#ffd60a] text-gray-900' : 'bg-gray-700 text-gray-300'
+                  isLogin ? 'bg-gradient-to-r from-[#01bdc1] to-[#1d73bd] text-white' : 'bg-gray-700 text-gray-300'
                 } rounded-l-md transition-all duration-300`}
                 onClick={() => {setIsLogin(true); }}
               >
@@ -31,7 +31,7 @@ export default function Home() {
               </button>
               <button
                 className={`flex-1 py-2 text-center ${
-                  !isLogin ? 'bg-[#ffd60a] text-gray-900' : 'bg-gray-700 text-gray-300'
+                  !isLogin ? 'bg-gradient-to-r from-[#01bdc1] to-[#1d73bd] text-white' : 'bg-gray-700 text-gray-300'
                 } rounded-r-md transition-all duration-300`}
                 onClick={() => setIsLogin(false)}
               >
