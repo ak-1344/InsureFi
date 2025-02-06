@@ -41,9 +41,8 @@ export default function HeroSection() {
                         <div className="z-20 flex flex-col gap-4 min-[400px]:flex-row">
                             <Button size="lg" className="font-medium bg-gradient-to-r from-[#01bdc1] to-[#1d73bd]" onClick={() => {
                                 const ctaSection = document.querySelector('#cta')
-                                if (ctaSection) {
-                                    ctaSection.scrollIntoView({ behavior: 'smooth' })
-                                }
+                                window.location.href = 'http://localhost:3000/auth';
+
                             }}>
                                 Get Started
                             </Button>

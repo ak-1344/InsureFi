@@ -41,7 +41,7 @@ export function CoverageCalculator() {
         />
       </div>
       <div className="grid gap-2">
-        <Label className="text-2xl" htmlFor="coverage">Coverage Amount ($)</Label>
+        <Label className="text-2xl" htmlFor="coverage">Coverage Amount (₹)</Label>
         <Input
           id="coverage"
           type="number"

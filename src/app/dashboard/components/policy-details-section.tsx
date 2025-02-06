@@ -23,8 +23,8 @@ export function PolicyDetailsSection({ className, ...props }: PolicyDetailsSecti
             <AccordionTrigger>Benefits</AccordionTrigger>
             <AccordionContent>
               <ul className="list-disc pl-5">
-                <li>Death benefit: $500,000</li>
-                <li>Accidental death benefit: Additional $250,000</li>
+                <li>Death benefit: ₹500,000</li>
+                <li>Accidental death benefit: Additional ₹250,000</li>
                 <li>Terminal illness benefit: 50% of death benefit</li>
               </ul>
             </AccordionContent>

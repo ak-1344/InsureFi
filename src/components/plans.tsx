@@ -43,7 +43,7 @@ export function PlansSection() {
             const cardContent = (
               <Card className="relative h-full">
                 {plan.recommended && (
-                  <Badge className="absolute bg-gradient-to-r from-[#01bdc1] to-[#1d73bd] top-4 right-4">
+                  <Badge className="absolute bg-gradient-to-r from-[#01bdc1] to-[#1d73bd] top-2 -right-5">
                     Recommended
                   </Badge>
                 )}
@@ -77,7 +77,7 @@ export function PlansSection() {
                   </ul>
                 </CardContent>
                 <CardFooter>
-                  <Button className="w-full bg-gradient-to-r from-[#01bdc1] to-[#1d73bd]">Compare Plans</Button>
+                    <Button className="w-full bg-gradient-to-r from-[#01bdc1] to-[#1d73bd]" onClick={() => window.location.href = '/auth'}>Choose Plan</Button>
                 </CardFooter>
               </Card>
             );

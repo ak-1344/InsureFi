@@ -19,15 +19,15 @@ export function OverviewSection({ className, ...props }: OverviewSectionProps) {
             </div>
             <div>
               <p className="text-sm font-medium">Monthly Premium</p>
-              <p className="text-2xl font-bold">$250</p>
+              <p className="text-2xl font-bold">₹250</p>
             </div>
             <div>
               <p className="text-sm font-medium">Total Premiums Paid</p>
-              <p className="text-2xl font-bold">$3,000</p>
+              <p className="text-2xl font-bold">₹3,000</p>
             </div>
             <div>
               <p className="text-sm font-medium">Coverage Amount</p>
-              <p className="text-2xl font-bold">$500,000</p>
+              <p className="text-2xl font-bold">₹500,000</p>
             </div>
           <div>
             <p className="text-sm font-medium mb-2">Coverage Period Progress</p>

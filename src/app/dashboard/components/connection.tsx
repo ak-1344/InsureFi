@@ -109,15 +109,15 @@ export function ConnectionSection({ className, ...props }: ConnectionSectionProp
                         </div>
                         <div>
                             <p className="text-sm font-medium">Monthly Premium</p>
-                            <p className="text-2xl font-bold">$250</p>
+                            <p className="text-2xl font-bold">₹250</p>
                         </div>
                         <div>
                             <p className="text-sm font-medium">Total Premiums Paid</p>
-                            <p className="text-2xl font-bold">$3,000</p>
+                            <p className="text-2xl font-bold">₹3,000</p>
                         </div>
                         <div>
                             <p className="text-sm font-medium">Coverage Amount</p>
-                            <p className="text-2xl font-bold">$500,000</p>
+                            <p className="text-2xl font-bold">₹500,000</p>
                         </div>
                         <div className="col-span-full">
                             <p className="text-sm font-medium mb-2">Coverage Period Progress</p>
@@ -209,8 +209,8 @@ export function ConnectionSection({ className, ...props }: ConnectionSectionProp
                                 <AccordionTrigger>Benefits</AccordionTrigger>
                                 <AccordionContent>
                                     <ul className="list-disc pl-5">
-                                        <li>Death benefit: $500,000</li>
-                                        <li>Accidental death benefit: Additional $250,000</li>
+                                        <li>Death benefit: ₹500,000</li>
+                                        <li>Accidental death benefit: Additional ₹250,000</li>
                                         <li>Terminal illness benefit: 50% of death benefit</li>
                                     </ul>
                                 </AccordionContent>

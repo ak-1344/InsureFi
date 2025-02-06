@@ -35,17 +35,7 @@ export function AboutSection() {
               <Button className="mt-6 bg-gradient-to-r from-[#01bdc1] to-[#1d73bd]">Learn More</Button>
             </div>
           </div>
-          <Card className="rounded-lg shadow-lg border-2">
-            <CardContent className="p-6">
-              <img
-                src="/placeholder.svg?height=400&width=500"
-                alt="InsureFi Blockchain Process"
-                className="rounded-lg"
-                width={500}
-                height={400}
-              />
-            </CardContent>
-          </Card>
+          
         </div>
       </div>
     </section>
